@@ -158,4 +158,4 @@ If **Vibe Code Ninja** has saved you tokens, prevented architectural drift, or s
 
 ## 📄 License
 
-This is released under the [MIT](https://choosealicense.com/licenses/mit) license.
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit).
