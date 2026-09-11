@@ -1,0 +1,7 @@
+# Browser extension. The signing key (*.pem) is covered by the baseline and
+# must never be committed: it controls the extension ID.
+*.crx
+.plasmo/
+.wxt/
+.output/
+web-ext-artifacts/

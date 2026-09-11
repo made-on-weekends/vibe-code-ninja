@@ -1,0 +1,14 @@
+# JVM (Gradle / Maven / Kotlin / Android)
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+target/
+out/
+.kotlin/
+*.class
+local.properties
+*.apk
+*.aab
+captures/
+.externalNativeBuild/
+.cxx/

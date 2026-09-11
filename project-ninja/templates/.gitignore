@@ -1,0 +1,42 @@
+# Secrets & Environment
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.env
+*.pem
+*.key
+*client_secret*.json
+*service-account*.json
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Local AI Agents & IDE
+.claude/settings.local.json
+CLAUDE.local.md
+GEMINI.local.md
+.gemini/
+.cursor/
+.codegraph/
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Dependencies & Package Managers (adapt to stack)
+# node_modules/, .venv/, vendor/, .pnpm-store/, etc.
+
+# Build & Output (adapt to stack)
+# dist/, build/, target/, .next/, out/, *.tsbuildinfo, etc.
+
+# OS & Temporary Logs
+*.log
+.DS_Store
+Thumbs.db
+*.sw?
+*~

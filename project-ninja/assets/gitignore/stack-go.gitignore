@@ -1,0 +1,10 @@
+# Go. Keep go.sum committed. vendor/ is a team decision, so it is not ignored here.
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+go.work.sum

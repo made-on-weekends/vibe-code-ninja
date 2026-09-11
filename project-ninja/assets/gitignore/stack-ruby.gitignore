@@ -1,0 +1,11 @@
+# Ruby / Rails. Keep Gemfile.lock committed for applications.
+/.bundle/
+/vendor/bundle/
+/log/*
+!/log/.keep
+/tmp/*
+!/tmp/.keep
+/config/master.key
+/config/credentials/*.key
+/public/assets/
+.byebug_history

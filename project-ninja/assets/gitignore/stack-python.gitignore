@@ -1,0 +1,24 @@
+# Python. Keep poetry.lock / uv.lock / Pipfile.lock / pdm.lock committed.
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.eggs/
+__pypackages__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.tox/
+.nox/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/

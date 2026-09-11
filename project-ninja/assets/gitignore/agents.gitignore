@@ -1,0 +1,43 @@
+# Coding agents: local state, transcripts, caches, personal overrides.
+# Shared agent config is deliberately NOT ignored and should be committed:
+#   CLAUDE.md, AGENTS.md, GEMINI.md, .claude/settings.json,
+#   .claude/{skills,agents,commands,rules,output-styles,workflows}/,
+#   .mcp.json (secrets as ${VAR} only), .worktreeinclude, .cursor/rules/,
+#   .github/copilot-instructions.md, .gemini/settings.json, .codex/config.toml,
+#   .agents/{rules,workflows,skills,agents,plugins}/ (Antigravity & cross-agent),
+#   and agent ignore files (.cursorignore, .geminiignore, .aiderignore, ...).
+# .vscode/mcp.json is covered by the baseline .vscode/* rule; re-include it in
+# the project section only after confirming it holds no literal tokens.
+
+# Claude Code: personal settings, private instructions, local subagent memory, worktrees
+**/.claude/settings.local.json
+**/CLAUDE.local.md
+**/.claude/agent-memory-local/
+**/.claude/worktrees/
+
+# Gemini CLI: project-scoped API keys, pasted-image scratch
+**/.gemini/.env
+.gemini-clipboard/
+
+# Aider: chat/input/LLM history and repo-map cache
+.aider.chat.history.md
+.aider.input.history
+.aider.llm.history
+.aider.tags.cache.v*/
+
+# OpenCode: plan-mode scratch files, plugin dependencies
+**/.opencode/plans/
+**/.opencode/node_modules/
+
+# Crush: session database, logs, local state
+.crush/
+
+# SpecStory: auto-saved chat transcripts from Cursor, Copilot, Claude Code, Codex...
+**/.specstory/history/
+**/.specstory/ai_rules_backups/
+
+# Serena: symbol cache
+**/.serena/cache/
+
+# Git worktrees created for parallel agent sessions
+/.worktrees/

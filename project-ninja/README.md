@@ -1,6 +1,6 @@
 # project-ninja
 
-Maintains alignment between code and project documentation across `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `README.md`, and a `docs/` folder of canonical project docs. Stack-agnostic — works for any language or framework.
+Maintains alignment between code and project documentation across `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `README.md`, `.gitignore`, and a `docs/` folder of canonical project docs. Stack-agnostic — works for any language or framework.
 
 ## What it prevents
 

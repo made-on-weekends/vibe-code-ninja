@@ -1,0 +1,7 @@
+# PHP / Composer. Keep composer.lock committed. If you ship vendor/ in a
+# distributed plugin, remove /vendor/ from this project's rules deliberately.
+/vendor/
+composer.phar
+.phpunit.result.cache
+.phpunit.cache/
+.php-cs-fixer.cache

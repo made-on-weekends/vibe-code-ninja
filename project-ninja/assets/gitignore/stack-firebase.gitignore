@@ -1,0 +1,9 @@
+# Firebase. .runtimeconfig.json holds functions config values.
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+ui-debug.log
+firestore-debug.log
+database-debug.log
+pubsub-debug.log
+.runtimeconfig.json

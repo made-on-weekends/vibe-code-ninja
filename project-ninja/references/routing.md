@@ -75,6 +75,7 @@ These docs anchor the project. INIT creates them first.
 
 | Phrase from user                              | Load                                                              |
 |-----------------------------------------------|-------------------------------------------------------------------|
+| "Generate .gitignore", "update .gitignore", "clean up .gitignore", "fix gitignore", "what shouldn't be committed" | `references/gitignore-policy.md` + inspect repo manifests |
 | "What did we decide about..."                 | `DECISIONS.md` (scan for keyword)                                 |
 | "Is X in scope"                               | `PRODUCT.md#in-scope` + `PRODUCT.md#explicitly-out-of-scope`      |
 | "What's our convention for..."                | `AGENTS.md#conventions` + relevant tier-2 doc                     |

@@ -1,0 +1,24 @@
+# Node.js / JavaScript / TypeScript. Keep lockfiles committed.
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.npm/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+dist/
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+coverage/
+.nyc_output/
+.turbo/
+.parcel-cache/
+.nx/cache/
+storybook-static/

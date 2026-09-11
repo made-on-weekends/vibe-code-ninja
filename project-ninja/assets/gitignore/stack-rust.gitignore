@@ -1,0 +1,4 @@
+# Rust. Commit Cargo.lock (current Cargo guidance applies to libraries too).
+/target/
+**/*.rs.bk
+*.pdb
