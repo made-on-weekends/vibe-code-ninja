@@ -30,8 +30,9 @@ For each doc, sample claims most likely to drift. Do NOT read end to end.
 
 | Doc            | Sample these claims                                        |
 |----------------|-----------------------------------------------------------|
+| .gitignore     | Tailored fit for repository stack; concise/noise-free structure; no unneeded global rule bloat or blind copy-paste boilerplate; secrets/keys protected (no greedy `.env*` or `id_*` globs); local agent state (.claude/settings.local.json, CLAUDE.local.md, GEMINI.local.md, .gemini/, .cursor/, .codegraph/) ignored without blanket-ignoring shared team configs; lockfiles and templates preserved |
 | AGENTS.md      | Commands match manifest scripts; version numbers; do-not-touch zones still exist |
-| README.md      | Quickstart command works; structure section matches actual dirs |
+| README.md      | Quickstart command works; structure matches actual dirs; linked docs/guides/LICENSE exist and paths/casing resolve; end sections in canonical order; no unresolved placeholders (%product_name%, %donation_link%, TODO markers) in active sections; no duplicate sections |
 | PRODUCT.md     | "In scope" list matches features actually implemented      |
 | ARCHITECTURE.md| Layer descriptions match code organization; deploy steps  |
 | API.md         | Endpoint shapes match route handlers; auth header matches |
@@ -55,6 +56,11 @@ Format:
 [OK]      pnpm dev script matches package.json
 [STALE]   Claims Node 18, package.json engines says 20
 [OK]      State management conventions match src/stores/
+
+## README.md  (last touched 2026-05-01)
+[OK]      Quickstart commands and structure match repository
+[OK]      Documentation, contributing, and license links resolve
+[STALE]   Link points to docs/SECURITY.md but file lives at root SECURITY.md
 
 ## PRODUCT.md (last touched 2026-02-03)
 [OK]      Target user matches landing page copy

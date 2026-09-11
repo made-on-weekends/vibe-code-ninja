@@ -19,6 +19,8 @@ Most code changes do NOT require doc updates. Updating docs for trivial changes 
 | New auth flow, permission, or threat model change | Yes — SECURITY.md |
 | Brand or visual identity change                   | Yes — BRAND.md (identity) and/or DESIGN.md (tokens) |
 | Test framework or strategy change                 | Yes — TESTING.md |
+| Doc structure, contributing, support, or license  | Yes — README.md (surgical update to relevant section) |
+| Secrets, agent local state, or build artifacts    | Yes — .gitignore (surgical update to relevant section) |
 
 If none of the trigger rows apply, skip UPDATE entirely.
 
@@ -41,6 +43,8 @@ For each doc:
 3. Edit only that section. Don't rewrite surrounding content.
 4. **30% rule:** if the change requires more than ~30% of the doc to be rewritten, STOP and surface: *"Updating <doc> for this change would touch ~N% of the file. That signals a structural shift — should I rewrite, or is the change actually broader than we discussed?"*
 5. **Google spec for DESIGN.md:** If updating `docs/DESIGN.md` or its derived/override mirrors, ensure it strictly complies with the Google Labs `design.md` spec and run `npx @google/design.md lint <filepath>` to verify.
+6. **README.md rules:** If updating `README.md`, follow the README rules (preserve tone and content, update existing sections instead of creating duplicates, maintain canonical section order `Documentation` → `Issues & Troubleshooting` → `Contributing` → `Support Us` → `License`, verify relative paths/casing, resolve placeholders or omit optional items and report omission, never invent licenses/URLs).
+7. **.gitignore rules:** If updating `.gitignore`, ensure additions/edits adhere to clean, noise-free formatting (`# Secrets & Environment`, `# Local AI Agents & IDE`, `# Dependencies & Package Managers`, `# Build & Output`, `# OS & Temporary Logs`, plus stack-specific headers). Tailor rules to newly introduced tools or build targets, consulting https://github.com/github/gitignore best practices with engineering judgment without blind copy-pasting or global rule bloat. Protect shared coding agent configs and lockfiles while ignoring local state. If unsure about whether a build output or artifact should be tracked, ask the user before writing.
 
 Surgical, defined: modify only the specific sentences, table rows, list items, or code-block contents whose facts changed. Do not adjust surrounding text for style, flow, or "while I'm here" cleanup. If a surrounding sentence is now factually wrong because of the change, that sentence is also a surgical edit — but unrelated style improvements are not.
 
@@ -87,6 +91,7 @@ Updated 2 docs:
 Cross-references checked (no updates needed):
 - ARCHITECTURE.md
 - SECURITY.md (rate limit rationale)
+- README.md (documentation links verified)
 ```
 
 ## Token usage notes
@@ -106,3 +111,4 @@ Total: usually 200–350 lines per session. Most UPDATE sessions touch 1 doc + 1
 - Does not edit DECISIONS.md history (only appends, plus the one-field Status edit when superseding)
 - Does not silently expand PRODUCT.md scope
 - Does not rewrite CLAUDE.md or GEMINI.md beyond their pointer-line role
+- Does not add duplicate sections to README.md

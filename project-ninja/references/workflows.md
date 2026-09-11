@@ -15,6 +15,11 @@ This file is an escape valve for when something has gone wrong and you need a qu
 | Deleted code without updating docs that referenced it| Run deletion check from `consult.md`                               |
 | CLAUDE.md or GEMINI.md grew beyond a pointer line    | Truncate back to pointer; move content to AGENTS.md                |
 | Duplicated content across BRAND.md and DESIGN.md     | Use `cross-references.md`; topics have one owner                   |
+| Added duplicate README sections                      | Update/merge into existing sections; maintain canonical order      |
+| Broken doc/license link in README                    | Verify relative path and casing; link only existing files         |
+| Unresolved placeholder in README                     | Resolve placeholder or omit optional item and report omission     |
+| Invented license or donation URL                     | Determine only from verified repository files/config; omit if absent |
+| AGENTS.md linked as user troubleshooting             | Link only user-facing guides in Issues & Troubleshooting; AGENTS.md belongs in Documentation |
 | Re-ran INIT on a project that already has AGENTS.md  | INIT guard should have caught this; if not, undo via git           |
 | Auto-loaded mode-specific reference for wrong mode   | Re-read the SKILL.md mode table; load only the matched mode's file |
 | Ran AUDIT after every UPDATE                          | AUDIT cadence is ~4 weeks; remove from routine                     |

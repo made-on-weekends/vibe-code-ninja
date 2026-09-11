@@ -10,6 +10,8 @@ Maintains alignment between code and project documentation across `AGENTS.md`, `
 4. **Silent decision reversal** — overriding `DECISIONS.md` entries without acknowledging
 5. **Doc bloat** — docs growing past the point of usefulness
 6. **Token waste** — loading every doc on every turn instead of routing
+7. **README drift & broken links** — ensures standardized, evidence-backed README sections (`Documentation`, `Issues & Troubleshooting`, `Contributing`, `Support Us`, `License`) with verified links and no unresolved placeholders or invented claims
+8. **Gitignore hygiene & bloat** — generates or revises clean, noise-free `.gitignore` files tailored to the repository stack without overwhelming global OS/editor bloat, referencing `github/gitignore` standards with engineering judgment
 
 ## What it manages
 
@@ -47,7 +49,7 @@ Maintains alignment between code and project documentation across `AGENTS.md`, `
 
 The skill is structured so that each invocation only loads what's needed:
 
-1. **SKILL.md is slim (~80 lines)** — contains binding rules + a routing table to mode-specific references. Loaded on every invocation.
+1. **SKILL.md is slim (~85 lines)** — contains binding rules + a routing table to mode-specific references. Loaded on every invocation.
 2. **Mode-specific references** — INIT/CONSULT/UPDATE/AUDIT procedures live in separate files. Only the matched mode's reference is loaded.
 3. **Section anchors in routing** — `references/routing.md` points to specific sections (e.g., `COMPONENTS.md#base-components`), so docs are read in fragments, not in full.
 4. **INIT runs once** — after the doc set exists, the skill refuses to re-INIT. Ongoing use is CONSULT (1–2 docs) or UPDATE (1 doc, surgical edit).
@@ -64,15 +66,15 @@ Typical CONSULT session: 200–400 lines of doc content total.
 
 ```
 project-ninja/
-├── SKILL.md                       # slim core (~80 lines): rules + mode router
+├── SKILL.md                       # slim core: rules + mode router
 ├── README.md                      # this file
 ├── references/
-│   ├── init.md                    # INIT procedure (one-time scaffold)
+│   ├── init.md                    # INIT procedure & README generation rules
 │   ├── consult.md                 # CONSULT procedure (anti-drift checks)
 │   ├── update.md                  # UPDATE procedure (surgical edits)
 │   ├── audit.md                   # AUDIT procedure (drift check)
 │   ├── routing.md                 # task → doc:section mapping
-│   ├── workflows.md               # extended procedures (rarely needed)
+│   ├── workflows.md               # extended procedures & failure mode fixes
 │   ├── anti-drift.md              # drift-pattern detail (rarely needed)
 │   └── cross-references.md        # ownership table
 └── templates/                     # 16 minimal stack-agnostic templates

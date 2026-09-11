@@ -12,11 +12,11 @@ The rule: **every topic has exactly one owner.** Other docs may reference it but
 | Typography scale (sizes/weights) | DESIGN.md      | BRAND.md (typeface choice named only)      | Same pattern as colors                           |
 | Spacing/radii/shadow tokens      | DESIGN.md      | —                                          | Single owner                                     |
 | Voice and tone rules             | BRAND.md       | UX.md (microcopy), API.md (error messages) | BRAND owns voice; usage docs link out            |
-| Logo and naming                  | BRAND.md       | —                                          | Single owner                                     |
+| Logo and naming                  | BRAND.md       | README.md (title / header)                 | BRAND owns identity; README uses name            |
 | Positioning statement            | BRAND.md       | PRODUCT.md (target user echoes)            | PRODUCT owns scope; BRAND owns identity          |
-| Product scope (in/out)           | PRODUCT.md     | DECISIONS.md (scope decisions)             | Scope changes are decisions                      |
+| Product scope (in/out)           | PRODUCT.md     | DECISIONS.md (scope decisions), README.md (📚 Documentation) | Scope changes are decisions; README links out |
 | Target user / persona            | PRODUCT.md     | UX.md (flows assume this user)             | UX patterns derive from persona                  |
-| Architecture overview            | ARCHITECTURE.md| README.md (one-paragraph mention)          | README links out; ARCHITECTURE has detail        |
+| Architecture overview            | ARCHITECTURE.md| README.md (📚 Documentation)              | README links out; ARCHITECTURE has detail        |
 | Auth flow (mechanics)            | SECURITY.md    | ARCHITECTURE.md (high-level only)          | SECURITY owns mechanics; ARCH shows the layer    |
 | Auth API endpoints               | API.md         | SECURITY.md (rationale only)               | API owns shape; SECURITY owns why                |
 | Rate limit values                | API.md         | SECURITY.md (threat model rationale)       | API owns numbers; SECURITY owns reasoning        |
@@ -26,10 +26,16 @@ The rule: **every topic has exactly one owner.** Other docs may reference it but
 | Component reuse threshold        | COMPONENTS.md  | DESIGN.md (when patterns become tokens)    | COMPONENTS owns components; DESIGN owns tokens   |
 | Component prop API rules         | COMPONENTS.md  | —                                          | Single owner                                     |
 | Test commands                    | AGENTS.md      | TESTING.md (what to test)                  | AGENTS owns commands; TESTING owns strategy      |
-| Test strategy                    | TESTING.md     | AGENTS.md (commands referenced)            | Mirror of above                                  |
-| Settled architectural decisions  | DECISIONS.md   | (referenced from any doc)                  | Append-only; everything can reference            |
-| Hard security rules              | SECURITY.md    | DECISIONS.md (overrides require entry)     | Hard rules need DECISIONS entry to violate       |
-| Stack/tooling/commands           | AGENTS.md      | README.md (quickstart command only)        | AGENTS = source of truth; README links out       |
+| Test strategy                    | TESTING.md     | AGENTS.md (commands referenced), README.md (📚 Documentation) | Mirror of above; README links out |
+| Settled architectural decisions  | DECISIONS.md   | README.md (📚 Documentation), other docs   | Append-only; everything can reference            |
+| Hard security rules              | SECURITY.md    | DECISIONS.md (overrides require entry), README.md (📚 Documentation) | Hard rules need DECISIONS entry to violate |
+| Stack/tooling/commands           | AGENTS.md      | README.md (quickstart & 📚 Documentation) | AGENTS = source of truth; README links out       |
+| Git ignore rules                 | .gitignore     | AGENTS.md (do-not-touch zones), SECURITY.md (secrets/inventory) | .gitignore owns patterns; AGENTS surfaces do-not-touch rules |
+| Documentation directory & links  | Canonical docs | README.md (## 📚 Documentation)           | README links only to verified existing doc files |
+| Issue reporting & troubleshooting| REPORTING.md / tracker | README.md (## 🐛 Issues & Troubleshooting) | README links to guide/tracker; never publicize vulnerabilities |
+| Contribution workflow            | CONTRIBUTING.md| README.md (## 🤝 Contributing)             | README links to guide when public contributions open |
+| Project support & donations      | Project config | README.md (## ⭐ Support Us)               | README displays star/share/donation (with tracking params) |
+| License terms                    | LICENSE file   | README.md (## 📄 License)                  | README links to verified LICENSE; never invents terms |
 | Error response shape             | API.md         | —                                          | Single owner                                     |
 | Idempotency / pagination policy  | API.md         | —                                          | Single owner                                     |
 | Undo / irreversible action rules | UX.md          | —                                          | Single owner                                     |
@@ -44,6 +50,7 @@ When filling templates, consult this table to know what *not* to put where. Exam
 - User describes color palette → goes in DESIGN.md only; BRAND.md gets a one-line mention plus link
 - User describes auth flow → mechanics in SECURITY.md, layer placement in ARCHITECTURE.md, endpoint shapes in API.md
 - User describes test strategy → strategy in TESTING.md, commands in AGENTS.md
+- README.md end sections → links out to AGENTS.md, docs/*, REPORTING.md, CONTRIBUTING.md, LICENSE; never duplicates their entire content
 
 ### During UPDATE mode
 
@@ -71,4 +78,5 @@ The table can grow over time. Add rows when a project introduces a new topic tha
 - API.md and SECURITY.md duplicating rate limit values
 - ARCHITECTURE.md and SECURITY.md duplicating auth flow descriptions
 - AGENTS.md and TESTING.md duplicating test commands
+- README.md duplicating full doc contents or inventing unverified license/donation links
 - General entropy where every doc grows to cover everything
